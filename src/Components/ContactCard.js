@@ -2,7 +2,7 @@ import React from 'react';
 import user from "../Images/user.png";
 
 function ContactCard(props) {
-    const {name, email} = props.contact;
+    const {id, name, email} = props.contact;
     return (
         
         <li className="list-group-item d-flex justify-content-between">
@@ -10,7 +10,9 @@ function ContactCard(props) {
         <img src = {user} alt = "user" /> <b>{name} </b>&nbsp; {email} 
         </div>
         <div className = "pt-2">
-        <i className = "fa fa-trash" style = {{color : "red", size : "64px"}}></i>
+        <i className = "fa fa-trash" style = {{color : "red", size : "64px"}}
+          onClick = {() => props.clickHandler(id)}
+        ></i>
         </div>
         </li>
        
