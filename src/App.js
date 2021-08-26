@@ -1,9 +1,10 @@
 import React from "react";
 import {useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch,Route } from "react-router-dom";
 import {uuid} from "uuidv4";
-import Form from "./Components/Form";
+import Form from "./Components/AddContact";
 import Header from "./Components/Header";
-import Contact from "./Components/Contact";
+import Contact from "./Components/ContactList";
 
 function App() {
   const Local_Storage_Key = "contacts";
@@ -31,9 +32,25 @@ function App() {
 
   return (
     <div className="App">
+      <Router>   
       <Header/>
-      <Form addContacthandler = {addContact}/>
-      <Contact contacts = {contacts} getContactId = {removeContactHandler}/>
+      <Switch>
+      <Route path = "/" exact  render = {(props) => (
+        <Contact
+         {...props}
+          contacts = {contacts}
+          getContactId = {removeContactHandler}
+        />
+      )}
+      />
+      
+      <Route path = "/add" render = {(props) => (
+        <Form 
+        {...props}
+        addContacthandler = {addContact}/>
+      )}/>
+      </Switch>
+      </Router>
     </div>
   );
 }

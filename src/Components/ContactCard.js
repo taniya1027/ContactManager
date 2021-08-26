@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react";
 import user from "../Images/user.png";
 
 function ContactCard(props) {
@@ -7,6 +8,7 @@ function ContactCard(props) {
         
         <li className="list-group-item d-flex justify-content-between">
         <div className = "content">
+        
         <img src = {user} alt = "user" /> <b>{name} </b>&nbsp; {email} 
         </div>
         <div className = "pt-2">
@@ -15,7 +17,7 @@ function ContactCard(props) {
         ></i>
         </div>
         </li>
-       
+        
     )
 }
 
