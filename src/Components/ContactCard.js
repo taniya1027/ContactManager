@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react";
+import {Link} from "react-router-dom";
 import user from "../Images/user.png";
 
 function ContactCard(props) {
@@ -9,7 +9,10 @@ function ContactCard(props) {
         <li className="list-group-item d-flex justify-content-between">
         <div className = "content">
         
-        <img src = {user} alt = "user" /> <b>{name} </b>&nbsp; {email} 
+        <img src = {user} alt = "user" /> 
+        <Link to = {{pathname : "/contact/${id}", state : {contact : props.contact}}}>
+        <b>{name} </b>&nbsp; {email} 
+        </Link>
         </div>
         <div className = "pt-2">
         <i className = "fa fa-trash" style = {{color : "red", size : "64px"}}

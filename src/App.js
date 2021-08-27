@@ -5,6 +5,7 @@ import {uuid} from "uuidv4";
 import Form from "./Components/AddContact";
 import Header from "./Components/Header";
 import Contact from "./Components/ContactList";
+import ContactDetail from "./Components/ContactDetail";
 
 function App() {
   const Local_Storage_Key = "contacts";
@@ -49,6 +50,8 @@ function App() {
         {...props}
         addContacthandler = {addContact}/>
       )}/>
+
+      <Route path = "/contact/:id" component = {ContactDetail} />
       </Switch>
       </Router>
     </div>
