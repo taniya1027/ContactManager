@@ -15,9 +15,14 @@ function ContactCard(props) {
         </Link>
         </div>
         <div className = "pt-2">
-        <i className = "fa fa-trash" style = {{color : "red", size : "64px"}}
+        <i className = "fas fa-edit " style = {{color : "red", size : "150px", marginRight : "50px"}}
           onClick = {() => props.clickHandler(id)}
         ></i>
+
+        <i className = "fa fa-trash" style = {{color : "red", size : "150px"}}
+          onClick = {() => props.clickHandler(id)}
+        ></i>
+        
         </div>
         </li>
         
